@@ -5,6 +5,11 @@
   "repository": "https://github.com/sarovin/next-firebase-functions.git",
   "author": "Saro Vindigni",
   "license": "MIT",
+  "dependencies": {
+    "next": "^2.4.7",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
@@ -12,11 +17,12 @@
     "rimraf": "^2.6.1"
   },
   "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
     "prepackage-functions": "rimraf functions",
-    "package-functions": "babel 'functionsES6' --out-dir 'functions' --presets=es2015 --copy-files --ignore 'node_modules'",
+    "package-functions": "babel 'functionsES6' --out-dir 'functions' --presets=es2015 --copy-files --ignore 'node_modules, pages'",
     "postpackage-functions": "cd functions && yarn",
-    "build": "cd src && yarn run build",
-    "postbuild": "cp-cli src/.next .next",
     "deploy": "yarn run package-functions && yarn run build && firebase deploy"
   }
 }
