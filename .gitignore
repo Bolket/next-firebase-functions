@@ -33,6 +33,7 @@ bower_components
 build/Release
 functions/
 src/.next
+.next
 
 # Dependency directories
 node_modules/
