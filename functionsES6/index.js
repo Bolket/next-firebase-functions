@@ -6,27 +6,19 @@ import next from 'next';
 const nextApp = next({ dev: false });
 const handle = nextApp.getRequestHandler();
 
-nextApp
-  .prepare()
-  .then(() => {
-    const server = express();
-    server.use(cors({ origin: true }));
+const slasher = handler => (req, res) => {
+  if (req.url === '') {
+    req.url = '/';
+  }
 
-    server.get('/a', (req, res) => {
-      return nextApp.render(req, res, '/b', req.query);
-    });
+  return handler(req, res);
+};
 
-    server.get('/b', (req, res) => {
-      return nextApp.render(req, res, '/a', req.query);
-    });
-
-    server.get('*', (req, res) => {
-      return handle(req, res);
+export let app = functions.https.onRequest(
+  slasher((req, res) => {
+    return nextApp.prepare().then(() => handle(req, res)).catch(ex => {
+      console.error(ex.stack);
+      process.exit(1);
     });
   })
-  .catch(ex => {
-    console.error(ex.stack);
-    process.exit(1);
-  });
-
-export let app = functions.https.onRequest(nextApp);
+);
