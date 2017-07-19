@@ -1,7 +1,7 @@
 {
   "name": "next-firebase-functions",
   "version": "1.0.0",
-  "description": "next server running on Cloud Functions for Firebase",
+  "description": "NextJS with firebase cloud functions",
   "repository": "https://github.com/sarovin/next-firebase-functions.git",
   "author": "Saro Vindigni",
   "license": "MIT",
