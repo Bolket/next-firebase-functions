@@ -6,6 +6,7 @@ Clone the repo [or download](https://github.com/sarovin/next-firebase-functions/
 
 ```bash
 git clone git@github.com:sarovin/next-firebase-functions.git
+cd next-firebase-functions
 ```
 
 Install it and run:
