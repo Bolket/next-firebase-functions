@@ -7,8 +7,8 @@ const nextApp = next({ dev: false });
 const handle = nextApp.getRequestHandler();
 
 const slasher = handler => (req, res) => {
-  if (req.url === '') {
-    req.url = '/';
+  if (!req.path) {
+    req.url = `/${req.url}`;
   }
 
   return handler(req, res);

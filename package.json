@@ -23,6 +23,7 @@
     "postpackage-functions": "cd functions && yarn",
     "prenext-build": "cp-cli src/ functions/",
     "next-build": "cd functions && yarn run build",
+    "firebase:serve": "cd functions && firebase serve --port 3000 --only functions,hosting",
     "firebase:deploy": "cd functions && firebase deploy",
     "deploy": "yarn run package-functions && yarn run next-build && yarn firebase:deploy"
   }

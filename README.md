@@ -12,6 +12,8 @@ cd next-firebase-functions
 Install it and run:
 
 ```bash
+yarn global add firebase-tools
 yarn install
-yarn run deploy
+yarn run firebase:serve
+open http://localhost:3000
 ```
