@@ -18,13 +18,15 @@
     "rimraf": "^2.6.1"
   },
   "scripts": {
-    "prepackage-functions": "rimraf functions",
-    "package-functions": "babel 'functionsES6' --out-dir 'functions' --presets=es2015 --copy-files --ignore 'node_modules'",
-    "postpackage-functions": "cd functions && yarn",
-    "prenext-build": "cp-cli src/ functions/",
-    "next-build": "cd functions && yarn run build",
-    "firebase:serve": "cd functions && firebase serve --port 3000 --only functions,hosting",
-    "firebase:deploy": "cd functions && firebase deploy",
-    "deploy": "yarn run package-functions && yarn run next-build && yarn firebase:deploy"
+    "prepackage-functions": "rimraf 'src/functions'",
+    "package-functions": "babel 'functionsES6' --out-dir 'src/functions' --presets=es2015 --copy-files --ignore 'node_modules'",
+    "next": "yarn build-firebase && cd 'src/app' && yarn && yarn dev",
+    "preserve": "yarn build-all",
+    "serve": "firebase serve --port 3000 --only functions,hosting",
+    "build-next": "cd 'src/app' && yarn && yarn build",
+    "build-firebase": "cd 'src/functions' && yarn",
+    "build-all": "yarn package-functions && yarn build-next && yarn build-firebase",
+    "predeploy": "yarn build-all",
+    "deploy": "cd 'src/functions' && firebase deploy"
   }
 }

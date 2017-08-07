@@ -1,11 +1,14 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "src/public",
     "rewrites": [
       {
-        "source": "**",
+        "source": "**/**",
         "function": "app"
       }
     ]
+  },
+  "functions": {
+    "source": "src/functions"
   }
 }
