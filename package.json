@@ -22,7 +22,7 @@
     "package-functions": "babel 'src/functions' --out-dir 'build/functions' --presets=es2015 --copy-files --ignore 'node_modules'",
     "next": "yarn build-firebase && cd 'src/app' && yarn && yarn dev",
     "preserve": "yarn build-all",
-    "serve": "cd 'build/funcions' && firebase serve --port 3000 --only functions,hosting",
+    "serve": "cd 'build/functions' && firebase serve --port 3000 --only functions,hosting",
     "build-next": "cd 'src/app' && yarn && yarn build",
     "build-firebase": "yarn package-functions && cd 'build/functions' && yarn",
     "build-all": "yarn build-firebase && yarn build-next",
