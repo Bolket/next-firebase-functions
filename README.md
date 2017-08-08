@@ -14,6 +14,6 @@ Install it and run:
 ```bash
 yarn global add firebase-tools
 yarn install
-yarn run firebase:serve
+yarn run serve
 open http://localhost:3000
 ```
