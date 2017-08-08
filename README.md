@@ -2,10 +2,10 @@
 
 ## How to use
 
-Clone the repo [or download](https://github.com/sarovin/next-firebase-functions/archive/master.zip):
+Clone the repo [or download](https://github.com/bolket/next-firebase-functions/archive/master.zip):
 
 ```bash
-git clone git@github.com:sarovin/next-firebase-functions.git
+git clone git@github.com:bolket/next-firebase-functions.git
 cd next-firebase-functions
 ```
 
