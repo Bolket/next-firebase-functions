@@ -31,8 +31,6 @@ bower_components
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
-functions/
-src/.next
 .next
 
 # Dependency directories
