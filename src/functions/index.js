@@ -3,7 +3,8 @@ import cors from 'cors';
 import express from 'express';
 import next from 'next';
 
-const nextApp = next({ dev: false, conf: { distDir: 'next' } });
+const dev = process.env.NODE_ENV !== 'production';
+const nextApp = next({ dev, conf: { distDir: 'next' } });
 const handle = nextApp.getRequestHandler();
 
 const slasher = handler => (req, res) => {
