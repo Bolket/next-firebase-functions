@@ -15,11 +15,9 @@ const slasher = handler => (req, res) => {
   return handler(req, res);
 };
 
-export let app = functions.https.onRequest(
-  slasher((req, res) => {
-    return nextApp.prepare().then(() => handle(req, res)).catch(ex => {
-      console.error(ex.stack);
-      process.exit(1);
-    });
-  })
-);
+export let app = functions.https.onRequest((req, res) => {
+  return nextApp.prepare().then(() => handle(req, res)).catch(ex => {
+    console.error(ex.stack);
+    process.exit(1);
+  });
+});
