@@ -37,8 +37,8 @@ src/.next
 
 # Dependency directories
 node_modules/
-functionsES6/node_modules/
-src/node_modules/
+src/**/node_modules/
+build/functions/
 jspm_packages/
 
 # Typescript v1 declaration files
