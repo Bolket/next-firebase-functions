@@ -3,7 +3,7 @@
   "description": "WebApp",
   "private": true,
   "dependencies": {
-    "next": "^2.4.7",
+    "next": "^3.0.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
