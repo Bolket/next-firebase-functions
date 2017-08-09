@@ -3,7 +3,7 @@ import cors from 'cors';
 import express from 'express';
 import next from 'next';
 
-const nextApp = next({ dev: false, conf: { distDir: 'next' } });
+const nextApp = next({ dev: true, conf: { distDir: 'next' } });
 const handle = nextApp.getRequestHandler();
 
 export let app = functions.https.onRequest(async (req, res) => {
