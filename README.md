@@ -15,5 +15,5 @@ Install it and run:
 yarn global add firebase-tools
 yarn install
 yarn run serve
-open http://localhost:3000
+open http://localhost:5000
 ```
