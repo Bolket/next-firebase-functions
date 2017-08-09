@@ -8,7 +8,10 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
     "cp-cli": "^1.0.2",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.2",
@@ -19,10 +22,10 @@
   },
   "scripts": {
     "prepackage-functions": "rimraf 'build/functions'",
-    "package-functions": "babel 'src/functions' --out-dir 'build/functions' --presets=es2015 --copy-files --ignore 'node_modules'",
+    "package-functions": "babel 'src/functions' --out-dir 'build/functions' --plugins=transform-runtime --presets=es2015,stage-3 --copy-files --ignore 'node_modules'",
     "next": "yarn build-firebase && cd 'src/app' && yarn && yarn dev",
     "preserve": "yarn build-all",
-    "serve": "cd 'build/functions' && firebase serve --port 3000 --only functions,hosting",
+    "serve": "firebase serve --port 5000 --only hosting,functions",
     "build-next": "cd 'src/app' && yarn && yarn build",
     "build-firebase": "yarn package-functions && cd 'build/functions' && yarn",
     "build-all": "yarn build-firebase && yarn build-next",
