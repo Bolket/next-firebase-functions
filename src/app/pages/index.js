@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default () =>
+const Index = props => (
   <div>
     <h1>NextJS Server Side</h1>
     <ul>
@@ -16,4 +16,15 @@ export default () =>
         </Link>
       </li>
     </ul>
-  </div>;
+  </div>
+);
+
+Index.getInitialProps = async ({ req }) => {
+  const user = req && req.session ? req.session.decodedToken : null;
+
+  console.log('INDEX SESSION', req.session);
+
+  return { user };
+};
+
+export default Index;
