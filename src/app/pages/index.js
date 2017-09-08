@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default () =>
+const Index = props => (
   <div>
     <h1>NextJS Server Side</h1>
+    {uid !== '' && <p>{`User uid: ${props.uid}`}</p>}
     <ul>
       <li>
         <Link href="/a">
@@ -16,4 +17,16 @@ export default () =>
         </Link>
       </li>
     </ul>
-  </div>;
+  </div>
+);
+
+Index.getInitialProps = async ({ req }) => {
+  const uid =
+    req && req.session && req.session.decodedToken
+      ? req.session.decodedToken.uid
+      : '';
+
+  return { uid };
+};
+
+export default Index;
