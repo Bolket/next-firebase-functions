@@ -13,15 +13,20 @@ const handle = nextApp.getRequestHandler();
 
 const server = express();
 server.use(bodyParser.json());
+server.set('trust proxy', 1);
 server.use(
   session({
     store: new FirebaseSession({
       database: firebase.database(),
     }),
+    name: '__session', // With GCF only this name is permitted
     secret: 'mysecret',
+    secure: true,
     resave: false,
+    rolling: true,
+    httpOnly: true,
+    cookie: { maxAge: 604800000 }, // week
     saveUninitialized: false,
-    signed: true,
   })
 );
 
@@ -33,10 +38,12 @@ server.post('/api/login', async (req, res) => {
     const token = req.body.token;
     const decodedToken = await firebase.auth().verifyIdToken(token);
 
-    console.log('LOGIN SESSION', req.session);
+    // If user is verified then allow session
+    if (decodedToken.email_verified) {
+      req.session.decodedToken = decodedToken;
+    }
 
-    req.session.decodedToken = decodedToken;
-    res.json({ status: true, decodedToken });
+    res.json({ status: true });
   } catch (err) {
     res.json({ err });
     console.log('ERROR', err);
@@ -44,7 +51,7 @@ server.post('/api/login', async (req, res) => {
 });
 
 server.post('/api/logout', (req, res) => {
-  req.session.decodedToken = null;
+  req.session.destroy();
   res.json({ status: true });
 });
 
@@ -52,7 +59,6 @@ server.get('*', (req, res) => handle(req, res));
 
 export let app = functions.https.onRequest(async (req, res) => {
   await nextApp.prepare();
-  console.log('APP', req.session);
   server(req, res);
 });
 
