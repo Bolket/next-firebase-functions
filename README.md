@@ -1,4 +1,4 @@
-# NextJS with firebase cloud functions
+# NextJS with firebase cloud functions [![Known Vulnerabilities](https://snyk.io/test/github/bolket/next-firebase-functions/badge.svg?targetFile=src%2Ffunctions%2Fpackage.json)](https://snyk.io/test/github/bolket/next-firebase-functions?targetFile=src%2Ffunctions%2Fpackage.json)
 
 ## How to use
 
