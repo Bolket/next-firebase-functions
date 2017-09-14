@@ -61,8 +61,3 @@ export let app = functions.https.onRequest(async (req, res) => {
   await nextApp.prepare();
   server(req, res);
 });
-
-export let app = functions.https.onRequest(async (req, res) => {
-  await nextApp.prepare();
-  handle(req, res);
-});
