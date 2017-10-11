@@ -5,23 +5,19 @@
   "dependencies": {
     "babel-runtime": "^6.25.0",
     "body-parser": "^1.17.2",
-    "connect-session-firebase": "^5.0.0",
+    "connect-session-firebase": "^5.3.0",
     "cors": "^2.8.4",
-    "express": "^4.15.3",
+    "express": "^4.15.4",
     "express-session": "^1.15.3",
-    "firebase-admin": "~5.1.0",
-    "firebase-functions": "^0.6.1",
-    "next": "^3.0.3",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "snyk": "^1.40.2"
+    "firebase-admin": "^5.4.2",
+    "firebase-functions": "^0.7.1",
+    "next": "^3.2.2",
+    "react": "15.5.4",
+    "react-dom": "15.5.4"
   },
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
-  },
-  "snyk": true
+    "start": "next start"
+  }
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 
-const Index = props => (
+const Index = ({ uid }) => (
   <div>
     <h1>NextJS Server Side</h1>
-    {uid !== '' && <p>{`User uid: ${props.uid}`}</p>}
+    {uid !== '' && <p>{`User uid: ${uid}`}</p>}
     <ul>
       <li>
         <Link href="/a">

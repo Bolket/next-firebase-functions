@@ -3,9 +3,9 @@
   "description": "WebApp",
   "private": true,
   "dependencies": {
-    "next": "^3.0.3",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "next": "^3.2.2",
+    "react": "15.5.4",
+    "react-dom": "15.5.4"
   },
   "scripts": {
     "dev": "next",

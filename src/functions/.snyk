@@ -1,8 +1,0 @@
-# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.7.1
-ignore: {}
-# patches apply the minimum changes required to fix a vulnerability
-patch:
-  'npm:ms:20170412':
-    - firebase-admin > jsonwebtoken > ms:
-        patched: '2017-09-14T09:28:25.340Z'
