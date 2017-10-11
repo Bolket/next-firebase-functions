@@ -11,9 +11,9 @@
     "express-session": "^1.15.3",
     "firebase-admin": "^5.4.2",
     "firebase-functions": "^0.7.1",
-    "next": "^3.2.2",
-    "react": "15.5.4",
-    "react-dom": "15.5.4"
+    "next": "^4.0.3",
+    "react": "16.0.0",
+    "react-dom": "16.0.0"
   },
   "scripts": {
     "dev": "next",
