@@ -19,3 +19,10 @@ yarn install
 yarn run serve
 open http://localhost:5000
 ```
+
+Donate
+------
+
+* Bitcoin (BTC): 1Eca2r87M5iBMPedAaNLvNpqnSjxBeGiE8
+* Etherium (ETH): 0xf6CEe7BbaF05702a55d2579A89081063dc15Ff72
+* Litecoin (LTC): LaN2fKHPrRMLQqC7C3ngLUnJPNoAeW41W7
