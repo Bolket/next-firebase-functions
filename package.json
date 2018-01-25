@@ -30,7 +30,7 @@
   },
   "scripts": {
     "prepackage-functions": "rimraf 'build/functions'",
-    "package-functions": "babel 'src/functions' --out-dir 'build/functions'",
+    "package-functions": "babel 'src/functions' --out-dir 'build/functions' --copy-files --ignore 'node_modules'",
     "prenext": "yarn package-functions && cd 'build/functions' && yarn",
     "next": "cd 'src/app' && yarn && yarn dev",
     "serve": "cd 'build/functions' && firebase serve --port 5000 --only hosting,functions",
