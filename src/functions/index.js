@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved,import/extensions,prefer-destructuring */
+
 import * as functions from 'firebase-functions';
 import admin from 'firebase-admin';
 import next from 'next';
@@ -14,21 +16,19 @@ const handle = nextApp.getRequestHandler();
 const server = express();
 server.use(bodyParser.json());
 server.set('trust proxy', 1);
-server.use(
-  session({
-    store: new FirebaseSession({
-      database: firebase.database(),
-    }),
-    name: '__session', // With GCF only this name is permitted
-    secret: 'mysecret',
-    secure: true,
-    resave: false,
-    rolling: true,
-    httpOnly: true,
-    cookie: { maxAge: 604800000 }, // week
-    saveUninitialized: false,
-  })
-);
+server.use(session({
+  store: new FirebaseSession({
+    database: firebase.database(),
+  }),
+  name: '__session', // With GCF only this name is permitted
+  secret: 'mysecret',
+  secure: true,
+  resave: false,
+  rolling: true,
+  httpOnly: true,
+  cookie: { maxAge: 604800000 }, // week
+  saveUninitialized: false,
+}));
 
 server.post('/api/login', async (req, res) => {
   if (!req.body) return res.sendStatus(400);
@@ -43,10 +43,9 @@ server.post('/api/login', async (req, res) => {
       req.session.decodedToken = decodedToken;
     }
 
-    res.json({ status: true });
+    return res.json({ status: true });
   } catch (err) {
-    res.json({ err });
-    console.log('ERROR', err);
+    return res.json({ err });
   }
 });
 
@@ -57,7 +56,7 @@ server.post('/api/logout', (req, res) => {
 
 server.get('*', (req, res) => handle(req, res));
 
-export let app = functions.https.onRequest(async (req, res) => {
+export const app = functions.https.onRequest(async (req, res) => {
   await nextApp.prepare();
   server(req, res);
 });
