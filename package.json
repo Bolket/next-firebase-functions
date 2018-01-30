@@ -7,7 +7,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.38",
-    "@babel/core": "7.0.0-beta.38",
+    "@babel/core": "7.0.0-beta.39",
     "@babel/preset-env": "^7.0.0-beta.38",
     "babel-eslint": "^8.2.1",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
