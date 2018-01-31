@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import withRedux from '../hocs/withRedux';
+import { getHelloRequest } from '../actions/hello';
 
 class Index extends Component {
   static async getInitialProps({ req }) {
     const uid = req && req.session && req.session.decodedToken ? req.session.decodedToken.uid : '';
 
     return { uid };
+  }
+
+  componentDidMount() {
+    this.props.dispatch(getHelloRequest());
   }
 
   render() {

@@ -1,10 +1,28 @@
 import { END } from 'redux-saga';
-import { put, take, call } from 'redux-saga/effects';
+import { put, take, call, takeLatest } from 'redux-saga/effects';
 import { reduxSagaFirebase as rsf } from '../lib/firebase';
-import * as actions from '../actions/auth';
-import { CLIENT_ONLY } from '../actions/actionTypes';
+import * as authActions from '../actions/auth';
+import * as helloActions from '../actions/hello';
+import { CLIENT_ONLY, GET_HELLO_REQUEST } from '../actions/actionTypes';
 
-export default function* syncUser() {
+function* getHello() {
+  try {
+    const snapshot = yield call(rsf.firestore.getDocument, 'content/hello');
+    const data = snapshot.data();
+    console.log('DATA', data);
+
+    yield put(helloActions.getHelloSuccess(data));
+  } catch (error) {
+    console.log('ERROR', error);
+    yield put(helloActions.getHelloFailure(error));
+  }
+}
+
+export function* watchgetHello() {
+  yield takeLatest(GET_HELLO_REQUEST, getHello);
+}
+
+export function* watchAuth() {
   try {
     const action = yield take.maybe(CLIENT_ONLY);
     const channel = yield call(rsf.auth.channel);
@@ -13,9 +31,9 @@ export default function* syncUser() {
       const { user } = yield take(channel);
 
       if (user) {
-        yield put(actions.authLoginSuccess({ user }));
+        yield put(authActions.authLoginSuccess({ user }));
       } else {
-        yield put(actions.authLogoutSuccess());
+        yield put(authActions.authLogoutSuccess());
       }
     }
   } catch (error) {

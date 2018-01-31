@@ -1,3 +1,4 @@
 import auth from './auth';
+import hello from './hello';
 
-export { auth };
+export { auth, hello };

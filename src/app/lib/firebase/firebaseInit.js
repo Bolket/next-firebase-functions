@@ -1,5 +1,5 @@
 /* eslint-disable import/first */
-import * as firebase from 'firebase';
+import firebase from 'firebase';
 import '@firebase/firestore';
 import credential from '../../credentials/client';
 
@@ -11,6 +11,4 @@ try {
   }
 }
 
-const firestore = firebase.firestore();
-
-export { firebase, firestore };
+export default firebase;
