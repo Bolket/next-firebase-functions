@@ -4,15 +4,16 @@
       "@babel/preset-env",
       {
         "targets": {
-          "node": "current"
+          "node": "6.11.5"
         }
       }
     ]
   ],
   "plugins": [
     "transform-decorators-legacy",
-    "transform-class-properties",
-    "transform-async-to-generator"
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-transform-async-to-generator",
+    "@babel/plugin-proposal-object-rest-spread"
   ],
   "sourceMaps": false,
   "ignore": ["**/node_modules"]
