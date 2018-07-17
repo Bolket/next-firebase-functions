@@ -10,7 +10,7 @@
     "compression": "^1.7.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
-    "firebase-admin": "5.12.1",
+    "firebase-admin": "5.13.0",
     "firebase-functions": "^1.0.2",
     "helmet": "^3.12.1",
     "next": "6.0.3",
