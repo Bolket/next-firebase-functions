@@ -1,3 +1,6 @@
+serviceAccountKey.json
+dist
+
 # Logs
 logs
 *.log
