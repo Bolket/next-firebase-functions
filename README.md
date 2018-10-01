@@ -11,13 +11,24 @@ git clone git@github.com:bolket/next-firebase-functions.git
 cd next-firebase-functions
 ```
 
-Install it and run:
+### Development nextjs
 
 ```bash
-yarn global add firebase-tools
-yarn install
-yarn run serve
-open http://localhost:5000
+yarn docker:dev
+open http://localhost:3000
+```
+
+### Firebase serve
+
+```bash
+yarn docker:serve
+open http://localhost:3000
+```
+
+### Firebase deploy
+
+```bash
+yarn docker:deploy
 ```
 
 ## Donate
