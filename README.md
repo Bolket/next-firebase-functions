@@ -11,7 +11,7 @@ git clone git@github.com:bolket/next-firebase-functions.git
 cd next-firebase-functions
 ```
 
-### Development nextjs
+### Dev next
 
 ```bash
 yarn docker:dev
