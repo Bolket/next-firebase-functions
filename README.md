@@ -1,4 +1,4 @@
-# NextJS with firebase cloud functions [![Known Vulnerabilities](https://snyk.io/test/github/bolket/next-firebase-functions/badge.svg?targetFile=src%2Ffunctions%2Fpackage.json)](https://snyk.io/test/github/bolket/next-firebase-functions?targetFile=src%2Ffunctions%2Fpackage.json)
+# NextJS with firebase cloud functions and Docker [![Known Vulnerabilities](https://snyk.io/test/github/bolket/next-firebase-functions/badge.svg?targetFile=src%2Ffunctions%2Fpackage.json)](https://snyk.io/test/github/bolket/next-firebase-functions?targetFile=src%2Ffunctions%2Fpackage.json)
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/Bolket/next-firebase-functions.svg)](https://greenkeeper.io/)
 
@@ -11,18 +11,26 @@ git clone git@github.com:bolket/next-firebase-functions.git
 cd next-firebase-functions
 ```
 
-Install it and run:
+### Dev next
 
 ```bash
-yarn global add firebase-tools
-yarn install
-yarn run serve
-open http://localhost:5000
+yarn docker:dev
+open http://localhost:3000
 ```
 
-Donate
-------
+### Firebase serve
 
-* Bitcoin (BTC): 1Eca2r87M5iBMPedAaNLvNpqnSjxBeGiE8
-* Etherium (ETH): 0xf6CEe7BbaF05702a55d2579A89081063dc15Ff72
-* Litecoin (LTC): LaN2fKHPrRMLQqC7C3ngLUnJPNoAeW41W7
+```bash
+yarn docker:serve
+open http://localhost:3000
+```
+
+### Firebase deploy
+
+```bash
+yarn docker:deploy
+```
+
+## Donate
+
+- Etherium (ETH): 0x57b5ab33a339fc7fab86127981e4095b84d5ddfa
