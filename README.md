@@ -1,4 +1,4 @@
-# NextJS with firebase cloud functions [![Known Vulnerabilities](https://snyk.io/test/github/bolket/next-firebase-functions/badge.svg?targetFile=src%2Ffunctions%2Fpackage.json)](https://snyk.io/test/github/bolket/next-firebase-functions?targetFile=src%2Ffunctions%2Fpackage.json)
+# NextJS with firebase cloud functions and Docker [![Known Vulnerabilities](https://snyk.io/test/github/bolket/next-firebase-functions/badge.svg?targetFile=src%2Ffunctions%2Fpackage.json)](https://snyk.io/test/github/bolket/next-firebase-functions?targetFile=src%2Ffunctions%2Fpackage.json)
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/Bolket/next-firebase-functions.svg)](https://greenkeeper.io/)
 

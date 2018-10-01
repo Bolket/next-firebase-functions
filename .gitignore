@@ -1,5 +1,6 @@
 serviceAccountKey.json
 dist
+.firebase
 
 # Logs
 logs
