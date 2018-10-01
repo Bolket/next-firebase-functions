@@ -7,9 +7,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "next src/app",
-    "serve": "cd dist/functions && firebase serve -p 3000",
+    "serve": "firebase serve -p 3000",
     "predeploy": "yarn clean && mkdir -p dist/functions",
-    "deploy": "cd dist/functions && firebase deploy",
+    "deploy": "firebase deploy",
     "clean": "rimraf \"dist/functions\" && rimraf \"dist/public\"",
     "build-public": "cpx \"src/public/**/*.*\" \"dist/public\" -C",
     "build-funcs": "NODE_ENV=production babel \"src/functions\" --out-dir \"dist/functions\"",
