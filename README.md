@@ -1,21 +1,24 @@
-# NextJS with firebase cloud functions and Docker [![Known Vulnerabilities](https://snyk.io/test/github/bolket/next-firebase-functions/badge.svg?targetFile=src%2Ffunctions%2Fpackage.json)](https://snyk.io/test/github/bolket/next-firebase-functions?targetFile=src%2Ffunctions%2Fpackage.json)
+# NextJS with firebase cloud functions and Docker
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/Bolket/next-firebase-functions.svg)](https://greenkeeper.io/)
 
 ## How to use
 
-Clone the repo [or download](https://github.com/bolket/next-firebase-functions/archive/master.zip):
+- Clone the repo [or download](https://github.com/bolket/next-firebase-functions/archive/master.zip):
 
 ```bash
 git clone git@github.com:bolket/next-firebase-functions.git
 cd next-firebase-functions
 ```
 
+- ADD serviceAccountKey.json to your project
+- SET .env from .env.example
+
 ### Dev next
 
 ```bash
 yarn docker:dev
-open http://localhost:3000
+open http://localhost:5000
 ```
 
 ### Firebase serve

@@ -25,6 +25,4 @@ const app = functions.https.onRequest(async (req, res) => {
   return server(req, res);
 });
 
-export {
-  app
-};
+export { app };
