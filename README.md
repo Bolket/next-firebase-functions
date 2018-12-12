@@ -1,3 +1,5 @@
+:no_entry: [DEPRECATED] This is no longer supported, please consider using [the example on the nextjs repo](https://github.com/zeit/next.js/tree/canary/examples/with-firebase-hosting-and-docker) instead. 
+
 # NextJS with firebase cloud functions and Docker
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/Bolket/next-firebase-functions.svg)](https://greenkeeper.io/)
